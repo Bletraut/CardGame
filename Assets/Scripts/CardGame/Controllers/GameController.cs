@@ -23,9 +23,9 @@ namespace CardGame.Controllers
 
         [Header("Game data")]
         [SerializeField]
-        private LevelsBundleData _levelsBundle;
+        private LevelsBundleData levelsBundle;
         [SerializeField]
-        private CardBundleData[] _cardBundles;
+        private CardBundleData[] cardBundles;
 
         [Header("Events")]
         public UnityEvent OnGameStarted;
@@ -107,7 +107,7 @@ namespace CardGame.Controllers
             yield return new WaitForSeconds(loadingLevelDelay);
 
             currentLevelIndex++;
-            if (currentLevelIndex < _levelsBundle.GridsData.Length) LoadCurrentLevel();
+            if (currentLevelIndex < levelsBundle.GridsData.Length) LoadCurrentLevel();
             else GameOver();
         }
         private void GameOver()
@@ -118,11 +118,11 @@ namespace CardGame.Controllers
             OnGameOver?.Invoke();
         }
 
-        private CardBundleData GetRandomCardBundle() => _cardBundles[Random.Range(0, _cardBundles.Length)];
+        private CardBundleData GetRandomCardBundle() => cardBundles[Random.Range(0, cardBundles.Length)];
         private List<Card> GetNewLevelCards() => deck.GetRandomCards(GetRandomCardBundle(), currentGridData.Rows * currentGridData.Columns);
         private void UpdateGrid()
         {
-            currentGridData = _levelsBundle.GridsData[currentLevelIndex];
+            currentGridData = levelsBundle.GridsData[currentLevelIndex];
             grid.SetGridData(currentGridData);
         }
 

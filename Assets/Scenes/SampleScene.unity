@@ -1131,8 +1131,8 @@ MonoBehaviour:
   grid: {fileID: 1851031997}
   deck: {fileID: 1131884516}
   winEffect: {fileID: 7882614808273786536}
-  _levelsBundle: {fileID: 11400000, guid: c390e420b07d8404c9a54509fae2ecd5, type: 2}
-  _cardBundles:
+  levelsBundle: {fileID: 11400000, guid: c390e420b07d8404c9a54509fae2ecd5, type: 2}
+  cardBundles:
   - {fileID: 11400000, guid: 95e7ab51c98d14840b8a6e71c6b5574e, type: 2}
   - {fileID: 11400000, guid: 4731c03f9aadffe4bb5aded8da0a1d5d, type: 2}
   OnGameStarted:
