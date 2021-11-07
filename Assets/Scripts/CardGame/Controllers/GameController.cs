@@ -103,6 +103,7 @@ namespace CardGame.Controllers
         }
         private IEnumerator NextLevelCor()
         {
+            // Waiting for win animation
             yield return new WaitForSeconds(loadingLevelDelay);
 
             currentLevelIndex++;
@@ -136,6 +137,7 @@ namespace CardGame.Controllers
         }
         private IEnumerator RestartCor()
         {
+            // Fake game loading
             yield return new WaitForSeconds(loadingLevelDelay * 2);
 
             currentLevelIndex = 0;
